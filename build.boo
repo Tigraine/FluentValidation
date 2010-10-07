@@ -42,19 +42,19 @@ target deploy:
   with FileList("src/FluentValidation/bin/${project_configuration}"):
     .Include("**/*")
     .ForEach def(file):
-      file.CopyToDirectory("${build_dir}/${project_configuration}/FluentValidation")
+      file.CopyToDirectory("${build_dir}/${project_configuration}/FluentValidation/NET35")
   
   #Mvc2 integration
   with FileList("src/FluentValidation.Mvc/bin/${project_configuration}"):
     .Include("FluentValidation.Mvc.*")
     .ForEach def(file):
-      file.CopyToDirectory("${build_dir}/${project_configuration}/MVC/MVC2")
+      file.CopyToDirectory("${build_dir}/${project_configuration}/MVC2/NET35")
   
   #mvc1 integration
   with FileList("src/FluentValidation.Mvc1/bin/${project_configuration}"):
     .Include("FluentValidation.Mvc.*")
     .ForEach def(file):
-      file.CopyToDirectory("${build_dir}/${project_configuration}/MVC/MVC1")
+      file.CopyToDirectory("${build_dir}/${project_configuration}/MVC1/NET35")
       
   #xVal
   with FileList("src/FluentValidation.xValIntegration/bin/${project_configuration}"):
@@ -68,7 +68,7 @@ target deploy:
     with FileList("src/FluentValidation.Silverlight/bin/${project_configuration}"):
       .Include("*.{dll,pdb,xml}")
       .ForEach def(file):
-        file.CopyToDirectory("${build_dir}/${project_configuration}/Experimental/Silverlight")
+        file.CopyToDirectory("${build_dir}/${project_configuration}/FluentValidation/SL4")
       
   #License/Changelog
   with FileList():
